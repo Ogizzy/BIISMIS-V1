@@ -131,6 +131,39 @@
                 <!-- .container-fluid -->
             </nav>
             <!-- End Navigation -->
+
+
+            <!-- Officers icon Pop-up CSS -->
+            <style>
+                .overlay {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9999;
+                }
+        
+                .popup {
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 20px;
+                    max-width: 50%;
+                    text-align: center;
+                }
+        
+                .popup img {
+                    width: 100px;
+                    border-radius: 50%;
+                    margin-bottom: 10px;
+                }
+            </style>
+
+              <!-- Officers icon Pop-up CSS Closed-->
         </header>
         <!-- End Header -->
 
@@ -147,9 +180,12 @@
                                 <div class="row">
                                     <br>
                                     <br>
-                                   <div class=" text-center"> <h2 style="color: rgb(11, 191, 26);">Benue State Government Setting a Pace for Digital Security Intelligence Solutions. <br>  <marquee style="color: rgb(251, 29, 0);">...Saving Lives and Properties</marquee></h2></div>
-                                    <!-- Feature 1 -->
-                                    <a href="sign-in.html">
+                                    
+                                   <div class=" text-center"> <img style="width: 100px;"  src="assets/images/brand-logos/coatofarm.png"> <h2 style="color: rgb(11, 191, 26);">Benue State Government Setting a Pace for Digital Security Intelligence Solutions. <br>  <marquee style="color: rgb(251, 29, 0);">...Saving Lives and Properties</marquee></h2></div>
+                                   
+                                    
+                                   <!-- Feature 1 -->
+                                    <a href="#" id="signin-btn">
                                         <div class="col-md-4 feature feature-center feature-primary-color">
                                             <div class="border-box text-center"
                                                 style="border-radius: 40px 5px 40px 5px;background-color: #56CCF2;">
@@ -162,7 +198,7 @@
                                         </div>
                                     </a>
 
-                                        <!-- Start here -->
+                                        
                                         <a href="#" target="_blank">
                                             <div class="col-md-4 feature feature-center feature-primary-color">
                                                 <div class="border-box"
@@ -189,7 +225,7 @@
                                             </div>
                                         </a>
 
-					<a href="#" target="_blank">
+					                        <a href="#" target="_blank">
                                             <div class="col-md-4 feature feature-center feature-primary-color">
                                                 <div class="border-box"
                                                     style="border-radius: 40px 5px 40px 5px;background-color: #08E4EE;">
@@ -201,7 +237,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                    <!-- stop here -->
+                                   
 
                                     <a href="#" target="_blank">
                                         <div class="col-md-4 feature feature-center feature-primary-color">
@@ -299,7 +335,7 @@
                                             <div class="border-box"
                                                 style="border-radius: 40px 5px 40px 5px;background-color: #7579D4;">
                                                 <span class="badge badge-primary"></span>
-                                                <img src="asset/images/psecurity2.png"
+                                                <img src="asset/images/psecurity.png"
                                                     class="img-thumbnail text-center" alt="" width="100">
                                                 <h3 style="color: black;">Benue State Unified Private
                                                     Security Services Operators Management System </h3>
@@ -353,11 +389,9 @@
                                             </div>
                                         </div>
                                     </a>
-                         <!-- insert here
-                                     -->
-
-                                    
-
+                         
+                         
+                              
                                     
                                    
                                 </div>
@@ -440,6 +474,70 @@
 
 <![endif]-->
 
+<!-- Officers Icon Hover CSS -->
+
+<style>.square-icon img,
+    .round-icon img {
+        width: 100px; /* Adjust the width of icons */
+        height: 100px; /* Ensure square dimensions */
+        border-radius: 50%; /* Make icons round by default */
+        transition: transform 0.3s ease; /* Add smooth transition for hover effect */
+    }
+    
+    .square-icon img {
+        border-radius: 5px; /* Make square icons */
+    }
+    
+    /* Hover effect */
+    .square-icon:hover img,
+    .round-icon:hover img {
+        transform: scale(1.1); /* Scale up the image on hover */
+    }
+    </style>
+
+<!-- End Officers Icon Hover CSS -->
+
+<div class="overlay" id="popup-container">
+    <div class="popup">
+        <h6>Click on Your Logo to Login</h6>
+        <hr>
+        <!-- Grid layout for images -->
+        <div class="image-grid">
+            <!-- Round images -->
+            <a href="sign-in.html" class="round-icon"><img src="assets/images/security-icons/police.png" alt="Nig Police Logo"></a>
+            <a href="sign-in.html" class="round-icon"><img src="assets/images/security-icons/nscdc.png" alt="civil Defence Logo"></a>
+            <a href="sign-in.html" class="round-icon"><img src="assets/images/security-icons/volguard.jpg" alt="Volunteers Guard Logo"></a>
+            <a href="sign-in.html" class="round-icon"><img src="assets/images/security-icons/bsvg.jpg" alt="bsvg logo"></a>
+            <a href="sign-in.html" class="round-icon"><img src="assets/images/security-icons/army.png" alt="Nigeria Army Logo"></a>
+            <a href="sign-in.html" class="round-icon"><img src="assets/images/security-icons/navy.png" alt="Nigeria Navy Logo"></a>
+            <a href="sign-in.html" class="round-icon"><img src="assets/images/security-icons/airforce.png" alt="airforce Logo"></a>
+            <a href="sign-in.html" class="round-icon"><img src="assets/images/security-icons/immigration.jpg" alt="immigration Logo"></a>
+            <a href="sign-in.html" class="round-icon"><img src="assets/images/security-icons/prison.jpg" alt="ncs Logo"></a>
+            <!-- Add more images as needed -->
+        </div>
+        <!-- Button to close the popup -->
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+
+
+<script>
+    const signinBtn = document.getElementById('signin-btn');
+    const popupContainer = document.getElementById('popup-container');
+
+    signinBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        popupContainer.style.display = 'flex';
+    });
+
+    function closePopup() {
+        popupContainer.style.display = 'none';
+    }
+</script>
+
+<!-- End Officers Popup icons -->
+
     <script type="text/javascript">
         $(document).ready(function () {
             $("#activationForm").on("submit", function (e) {
@@ -449,7 +547,7 @@
 
                 if (code.length.trim() !== 0 && company.length.trim() !== 0) { }
 
-                $.get("http://localhost/app-auth/index.php", {
+                $.get("system.html", {
                     code: code,
                     company: company
                 }, function (response) {
